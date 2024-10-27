@@ -1,4 +1,5 @@
 import './assets/main.css'
+import axiosInstance from './axiosInstance';
 
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
@@ -12,3 +13,4 @@ app.use(createPinia())
 app.use(router)
 
 app.mount('#app')
+app.config.globalProperties.$axios = axiosInstance;
