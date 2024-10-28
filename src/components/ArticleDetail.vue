@@ -1,10 +1,22 @@
 <script setup lang="ts">
-    import { ref } from 'vue';
+    import { onMounted, ref } from 'vue';
+    import { marked } from 'marked';
+    import { useRoute } from 'vue-router';
 
     const articleTitle = '';
     const insertTime: Date | null = null;
     const updateTime: Date | null = null;
     const clickCount = ref(0);
+
+    const markdownText = "# 这是一篇示例文章\n内容可以使用Markdown格式书写。";
+    const htmlContent = marked.parse(markdownText);
+    
+    const id = ref(null);
+    const router = useRoute();
+    
+    onMounted(() => {
+        id = route.params.id;
+    });
 </script>
 
 <template>
@@ -18,7 +30,7 @@
 
     <div class="content-info">
         <div class="wrap">
-            <div class="content">
+            <div class="content" v-html="htmlContent">
                 
             </div>
         </div>
