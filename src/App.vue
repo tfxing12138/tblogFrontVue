@@ -6,9 +6,9 @@ import BackTop from './components/BackTop.vue';
 </script>
 
 <template>
-  <HomeHeader/>
-  
-  <div id="content">
+  <!-- <HomeHeader/> -->
+  <RouterView />
+  <!-- <div id="content">
     <div class="wrap">
       <Article/>
 
@@ -16,7 +16,7 @@ import BackTop from './components/BackTop.vue';
     </div>
     
     <BackTop/>
-  </div>
+  </div> -->
 </template>
 
 <style scoped>

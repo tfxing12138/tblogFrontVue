@@ -12,10 +12,10 @@
     const htmlContent = marked.parse(markdownText);
     
     const id = ref(null);
-    const router = useRoute();
+    const route = useRoute();
     
     onMounted(() => {
-        id = route.params.id;
+        id.value = route.params.id;
     });
 </script>
 
@@ -23,6 +23,7 @@
     <div class="header">
         <div class="header-content">
             <h1>{{ articleTitle }}</h1>
+            {{ id }}
             <p>发表于{{ insertTime }}|更新于{{ updateTime }}</p>
             <p>阅读量：{{ clickCount }}</p>
         </div>    

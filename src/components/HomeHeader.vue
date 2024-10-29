@@ -1,5 +1,9 @@
 <script setup lang="ts">
   import { onMounted, ref } from 'vue';
+  import Article from '@/components/Article.vue';
+  import AuthorInfo from '@/components/AuthorInfo.vue'
+  import BackTop from '@/components/BackTop.vue';
+
   const textStages = ref([
       "/* 欢迎大家来到我的博客~ */", // 阶段1
       "/* 欢迎大家来到我的博客~ */", // 阶段1
@@ -70,9 +74,38 @@
             </a>
         </div>
     </div>
+    
+    <div id="content">
+      <div class="wrap">
+        <Article/>
+
+        <AuthorInfo/>
+      </div>
+      
+      <BackTop/>
+    </div>
 </template>
 
 <style>
+
+.back-icon{
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    z-index: 999;
+  }
+  
+  #content{
+    height: 100vh;
+    width: 100%;
+  }
+
+  .wrap {
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+  }
 
 .header>a>.icon{
   cursor: pointer;

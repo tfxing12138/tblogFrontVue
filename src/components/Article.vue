@@ -39,12 +39,11 @@
 </script>
 
 <template>
-    <router-view></router-view>
     <ul>
         <li v-for="(article, index) in articles" :key="index">
             <div class="article">
                 <div class="article-info">
-                    <router-link :to="{name: 'ArticleDetail', params: {id: article.id} }">{{ article.title }}</router-link>
+                   <router-link :to="{name: 'ArticleDetail', params: {id: article.id} }">{{ article.title }}</router-link>
                     <p class="art-create-date">
                         <!-- <IconDate/> -->
                         发表于 {{ article.insertTime }}
