@@ -66,7 +66,7 @@
     </ul>
 </template>
 
-<style>
+<style scoped>
 
 .art-create-date .icon{
     font-size: 16px;

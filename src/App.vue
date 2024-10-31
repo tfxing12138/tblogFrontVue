@@ -6,17 +6,7 @@ import BackTop from './components/BackTop.vue';
 </script>
 
 <template>
-  <!-- <HomeHeader/> -->
   <RouterView />
-  <!-- <div id="content">
-    <div class="wrap">
-      <Article/>
-
-      <AuthorInfo/>
-    </div>
-    
-    <BackTop/>
-  </div> -->
 </template>
 
 <style scoped>

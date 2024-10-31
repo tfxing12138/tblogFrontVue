@@ -2,6 +2,7 @@
     import { onMounted, ref } from 'vue';
     import { marked } from 'marked';
     import { useRoute } from 'vue-router';
+    import AuthorInfo from '@/components/AuthorInfo.vue';
 
     const articleTitle = '';
     const insertTime: Date | null = null;
@@ -20,10 +21,9 @@
 </script>
 
 <template>
-    <div class="header">
+   <div class="article-detail-header">
         <div class="header-content">
             <h1>{{ articleTitle }}</h1>
-            {{ id }}
             <p>发表于{{ insertTime }}|更新于{{ updateTime }}</p>
             <p>阅读量：{{ clickCount }}</p>
         </div>    
@@ -34,8 +34,27 @@
             <div class="content" v-html="htmlContent">
                 
             </div>
+
+            <AuthorInfo/>
         </div>
     </div>
 
-    
 </template>
+
+<style scoped>
+
+
+.article-detail-header{
+    width: 100%;
+    height: 30vh;
+    background-image: url(@/assets/img/哲风壁纸.png);
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.content-info{
+    width: 100%;
+    height: 70vh;
+}
+</style>
